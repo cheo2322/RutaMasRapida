@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 public class RouteSystem {
 
   private final List<Route> routes = new ArrayList<>();
+  private List<String> paths = new ArrayList<>();
 
   public void addRouteFromLine(String line) {
     Route route = new Route();
@@ -34,6 +35,10 @@ public class RouteSystem {
     }
 
     routes.add(route);
+  }
+
+  public void setPaths(List<String> paths) {
+    this.paths = paths;
   }
 
   @Override

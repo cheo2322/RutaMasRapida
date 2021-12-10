@@ -1,6 +1,5 @@
 package com.exercise;
 
-import com.exercise.logic.Route;
 import com.exercise.logic.RouteSystem;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -13,11 +12,11 @@ public class Main {
 
     Scanner scanner = new Scanner(System.in);
     String line = "";
+
     int indexRoutes = 0;
     int count = 0;
-    List<String> routes = new ArrayList<>();
-    List<String> stations = new ArrayList<>();
-    List<Route> routeList = new ArrayList<>();
+
+    List<String> paths = new ArrayList<>();
 
     RouteSystem routeSystem = new RouteSystem();
 
@@ -32,15 +31,16 @@ public class Main {
       } else if (count == 1) {
         for (int i = 0; i < indexRoutes; i++) {
           line = scanner.nextLine();
-          routes.add(line);
           routeSystem.addRouteFromLine(line);
         }
         count++;
       }
 
       line = scanner.nextLine();
-      stations.add(line);
+      paths.add(line);
     }
+
+    routeSystem.setPaths(paths);
 
     System.out.println(routeSystem);
   }
