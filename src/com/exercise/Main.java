@@ -33,15 +33,15 @@ public class Main {
           line = scanner.nextLine();
           routeSystem.addRouteFromLine(line);
         }
-        count++;
       }
 
       line = scanner.nextLine();
-      paths.add(line);
+      if (!line.equals("#")) {
+        paths.add(line);
+      }
     }
 
     routeSystem.setPaths(paths);
-
-    System.out.println(routeSystem);
+    System.out.println(paths);
   }
 }
