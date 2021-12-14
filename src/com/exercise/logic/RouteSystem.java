@@ -9,6 +9,20 @@ public class RouteSystem {
   private final List<Route> routes = new ArrayList<>();
   private List<String> paths = new ArrayList<>();
 
+  public void findFastestRoutes() {
+    for (String path : this.paths) {
+      System.out.println(path.concat(" exit"));
+      System.out.println(findFastestRoute(path));
+    }
+  }
+
+  private String findFastestRoute(String path) {
+    String begin = path.substring(0, 2);
+    String end = path.substring(2);
+
+    return begin.concat(" : ").concat(end);
+  }
+
   public void addRouteFromLine(String line) {
     Route route = new Route();
 
